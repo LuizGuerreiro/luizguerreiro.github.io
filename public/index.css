@@ -1,0 +1,141 @@
+:root {
+  --body-bg-color: #22212C;
+  --text-color: #837E9F;
+  --bg-cards: #302F3D;
+  --bg-techs: #CB92B1;
+}
+
+* {
+  margin: 0;
+  border: none;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Merriweather Sans', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  min-height: 100vh;
+  padding: 3% 3% 0;
+  background-color: var(--body-bg-color);
+  font-size: 0.9em;
+  color: var(--text-color);
+  display: grid;
+  align-content: stretch;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 5%;
+}
+
+aside, section {
+  display: grid;
+  gap: 5%;
+}
+
+aside>div, section div {
+  background-color: var(--bg-cards);
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px black;
+}
+
+aside .profile,
+aside .social {
+  padding: 10%;
+  display: grid;
+  gap: 5%;
+  align-content: center;
+}
+
+aside .profile {
+  justify-items: center;
+  text-align: center;
+}
+
+aside .profile img {
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  margin-bottom: 5%;
+  box-shadow: 0 0 4px 1px lime;
+}
+
+aside .profile h1 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+aside .profile p {
+  font-weight: lighter;
+}
+
+aside .social ul {
+  display: grid;
+  gap: 2%;
+}
+
+aside .social ul li {
+  display: flex;
+  align-items: center;
+  gap: 5%;
+  list-style-type: none;
+}
+
+aside .techs {
+  padding: 10%;
+}
+
+aside .techs h2 {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 5%;
+}
+
+aside .techs div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 5%;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: black;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+aside .techs div span {
+  margin: 5% 0;
+  padding: 5%;
+  background-color: var(--bg-techs);
+  border-radius: 30px;
+}
+
+section div {
+  padding: 3%;
+}
+
+section div:first-of-type {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+section div a {
+  font-size: 1em;
+}
+
+footer {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1%;
+}
