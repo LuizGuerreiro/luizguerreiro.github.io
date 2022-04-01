@@ -140,4 +140,11 @@ footer {
   justify-content: center;
   align-items: center;
   gap: 1%;
-} */
+}
+
+@media (max-width: 900px) {
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
