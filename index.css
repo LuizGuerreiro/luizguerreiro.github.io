@@ -34,10 +34,13 @@ h2 {
 }
  
 body {
-  min-height: 88vh;
+  min-height: 92vh;
   display: grid;
-  align-content: space-between;
-  margin: 3%;
+  grid-template-areas: "aside main"
+                       "footer footer";
+  grid-template-columns: 1fr 3fr;
+  column-gap: 3%;
+  margin: 1% 1% 0;
   background-color: var(--body-bg-color);
   color: var(--text-color);
 }
@@ -49,15 +52,14 @@ body {
   box-shadow: 2px 2px 2px black;
 }
 
-main {
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-  column-gap: 5%;
-}
-
 /* >>> ASIDE <<< */
 
-aside div {
+aside {
+  grid-area: aside;
+}
+
+aside>div {
+  padding: 10%;
   align-content: center;
 }
 
@@ -67,13 +69,13 @@ aside .profile {
 }
 
 aside .profile img {
-  margin: 5% 0;
+  margin-bottom: 5%;
   border-radius: 50%;
   box-shadow: 0 0 4px 1px var(--img-border);
 }
 
 aside .profile p {
-  margin: 2% 0 5%;
+  margin-top: 5%;
   font-weight: lighter;
 }
 
@@ -81,23 +83,20 @@ aside .social {
   margin: 5% 0;
 }
 
-aside .social ul {
-  margin: 5%;
-}
-
 aside .social ul li {
+  margin-bottom: 5%;
   display: flex;
-  column-gap: 2%;
+  column-gap: 5%;
   align-items: center;
   list-style-type: none;
 }
 
-aside .techs h2 {
-  margin: 5%;
+aside .social ul li:last-of-type {
+  margin-bottom: 0;
 }
 
 aside .techs div {
-  margin: 0 5% 5%;
+  margin-top: 5%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -111,40 +110,127 @@ aside .techs div {
 }
 
 aside .techs div span {
-  margin: 5%;
+  margin: 5% 0;
   background-color: var(--bg-techs);
   border-radius: 30px;
 }
 
-/* >>> SECTION <<< */
+/* >>> MAIN <<< */
 
-section div:first-of-type {
+main {
+  grid-area: main;
+}
+
+main section>div {
+  margin-bottom: 1.5%;
+  padding: 3%;
+}
+
+main section .myProjects {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
 }
-
-section div {
-  padding: 1.5% 2%;
+  
+main section div a {
+  font-size: 1em;
 }
 
-section div a {
-  font-size: 1em;
+main section .allProjects {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2%;
+}
+
+main section .allProjects>div {
+  padding: 6%;
+}
+
+main section .project>div {
+  display: flex;
+  margin-top: 2%;
+}
+
+main section .project .title {
+  margin-top: 0;
+  gap: 1%;
+}
+
+main section .project .statistics {
+  align-items: center;
+  justify-content: space-between;
+}
+
+main section .project .statistics div {
+  display: flex;
+  align-items: flex-end;
+  gap: 5%;
+}
+
+main section .project .statistics div p {
+  margin-right: 15%;
+}
+
+main section .post {
+  display: flex;
+  column-gap: 2%;
+}
+
+main section .post img {
+  border-radius: 50%;
+}
+
+main section .post>div {
+  display: grid;
+  gap: 25%;
+}
+
+main section .post div div {
+  display: grid;
+  align-content: space-between;
+}
+
+main section .post div div p:first-child {
+  font-size: 1.1em;
 }
 
 /* >>> FOOTER <<< */
 
 footer {
-  margin-top: 2.5%;
+  grid-area: footer;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1%;
 }
 
+/* >>> MEDIA <<< */
+
 @media (max-width: 900px) {
+  body {
+    margin: 2% 2% 0;
+    display: grid;
+    grid-template-areas: "aside"
+                         "main"
+                         "footer";
+    grid-template-columns: 1fr;
+  }
+
+  aside .social {
+    margin: 2% 0;
+  }
+
   main {
     display: grid;
+  }
+
+  main section>div {
+    margin-top: 2%;
+  }
+
+  main section .allProjects {
     grid-template-columns: 1fr;
+    row-gap: 3%;
   }
 }
