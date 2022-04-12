@@ -30,7 +30,11 @@ function getRepos() {
     let i = dataApi.length
     h3.forEach(item => {
       i--
-      item.innerHTML = dataApi[i].name
+      let link = document.createElement("a")
+      link.setAttribute('href', `${dataApi[i].html_url}`)
+      link.setAttribute('target', '_blank')
+      link.innerHTML = dataApi[i].name
+      item.appendChild(link)
     })
     
     let desc = document.querySelectorAll('.description')

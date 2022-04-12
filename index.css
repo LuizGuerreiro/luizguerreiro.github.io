@@ -4,6 +4,8 @@
   --bg-cards: #302F3D;
   --bg-techs: #CB92B1;
   --img-border: #00FF00;
+  --star: #e3b341;
+  --fork: rgb(53, 132, 124);
   --css: #563d7c;
   --html: #e34c26;
   --javascript: #f1e05a;
@@ -76,7 +78,7 @@ aside .profile {
 aside .profile img {
   margin-bottom: 5%;
   border-radius: 50%;
-  box-shadow: 0 0 4px 1px var(--img-border);
+  box-shadow: 0 0 4px 1px var(--fork);
 }
 
 aside .profile p {
@@ -173,6 +175,14 @@ main section .project .statistics div {
   gap: 5%;
 }
 
+main section .project .statistics div .star {
+  color: var(--star);
+}
+
+main section .project .statistics div .fork {
+  color: var(--fork);
+}
+
 main section .project .statistics div .projectStars {
   margin-right: 25%;
 }
@@ -215,6 +225,7 @@ main section .post {
 
 main section .post img {
   border-radius: 50%;
+  box-shadow: 0 0 4px 1px var(--fork);
 }
 
 main section .post>div {
