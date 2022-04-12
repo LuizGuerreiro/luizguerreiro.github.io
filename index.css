@@ -4,6 +4,11 @@
   --bg-cards: #302F3D;
   --bg-techs: #CB92B1;
   --img-border: #00FF00;
+  --css: #563d7c;
+  --html: #e34c26;
+  --javascript: #f1e05a;
+  --typescript: #2b7489;
+  --nunjucks: #3d8137;
 }
 
 * {
@@ -168,8 +173,39 @@ main section .project .statistics div {
   gap: 5%;
 }
 
-main section .project .statistics div p {
-  margin-right: 15%;
+main section .project .statistics div .projectStars {
+  margin-right: 25%;
+}
+
+main section .project .statistics p {
+  display: flex;
+  align-items: center;
+}
+
+main section .project .statistics .tech::before {
+  display: inline-block;
+  content: '\2022';
+  font-size: xxx-large;
+}
+
+main section .project .statistics .CSS::before {
+  color: var(--css);
+}
+
+main section .project .statistics .JavaScript::before {
+  color: var(--javascript);
+}
+
+main section .project .statistics .TypeScript::before {
+  color: var(--typescript);
+}
+
+main section .project .statistics .HTML::before {
+  color: var(--html);
+}
+
+main section .project .statistics .Nunjucks::before {
+  color: var(--nunjucks);
 }
 
 main section .post {

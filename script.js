@@ -59,6 +59,7 @@ function getRepos() {
     techs.forEach(item => {
       i--
       item.innerHTML = dataApi[i].language
+      item.classList.add(dataApi[i].language)
     })
   })
 }
